@@ -4,6 +4,7 @@ import { connectDB } from './db/config';
 import cors from 'cors';
 import http from 'http';
 import { Server } from 'socket.io';
+import userRouter from "./routers/userRouter"
 
 console.log('server start running');
 
@@ -16,7 +17,7 @@ app.use(cors());
 connectDB();
 app.use(express.json());
 
-app.use('/api/users', ()=>{});
+app.use('/api/users', userRouter);
 app.use('/api/cart', ()=>{});
 app.use('/api/products', ()=>{});
 export const io = new Server(server,{ cors: { origin: "*" } });
