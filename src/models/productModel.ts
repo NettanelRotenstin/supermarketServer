@@ -4,7 +4,7 @@ import { category } from "../types/enum/category";
 export interface IProduct extends Document {
     name: string;
     image?: string
-    category: category; // need to create enum
+    category: category;
     price: number;
     quantity: number;
 }
