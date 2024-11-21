@@ -41,7 +41,6 @@ export const addToCart = async (Cart: CartDto): Promise<void> => {
         totalPrice: 0,
         receipt: [],
         isPaid: false,
-        date: new Date(),
       });
     }
 
