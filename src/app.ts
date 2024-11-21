@@ -5,6 +5,8 @@ import cors from 'cors';
 import http from 'http';
 import { Server } from 'socket.io';
 import userRouter from "./routers/userRouter"
+import cartRouter from "./routers/cartRouter"
+import verifyUser from './middleware/verifyUser';
 
 console.log('server start running');
 
@@ -18,7 +20,7 @@ connectDB();
 app.use(express.json());
 
 app.use('/api/users', userRouter);
-app.use('/api/cart', ()=>{});
+app.use('/api/cart', verifyUser,cartRouter); 
 app.use('/api/products', ()=>{});
 export const io = new Server(server,{ cors: { origin: "*" } });
 io.on('connection', (socket) => {
