@@ -3,6 +3,7 @@ import CartModel from "../models/cartModel";
 import ProductModel from "../models/productModel";
 import { CartDto } from "../types/dto/cartDto";
 import { DelteteCartDto } from "../types/dto/deleteCartDto";
+import { PaymentDto } from "../types/dto/dtoPayment";
 
 export const cancelCartService = async (id: string) => {
   try {
@@ -40,7 +41,6 @@ export const addToCart = async (Cart: CartDto): Promise<void> => {
         totalPrice: 0,
         receipt: [],
         isPaid: false,
-        date: new Date(),
       });
     }
 
@@ -59,15 +59,20 @@ export const addToCart = async (Cart: CartDto): Promise<void> => {
 };
 
 export const removeFromCart = async (
-  deleteCart:DelteteCartDto
+  deleteCart: DelteteCartDto
 ): Promise<void> => {
   try {
-    const product = await ProductModel.findOne({ name: deleteCart.productName });
+    const product = await ProductModel.findOne({
+      name: deleteCart.productName,
+    });
     if (!product) {
       throw new Error("No such product exists.");
     }
 
-    const cart = await CartModel.findOne({ user_id: deleteCart.userId, isPaid: false });
+    const cart = await CartModel.findOne({
+      user_id: deleteCart.userId,
+      isPaid: false,
+    });
     if (!cart) {
       throw new Error("No active cart found for this user.");
     }
@@ -90,6 +95,30 @@ export const removeFromCart = async (
     await product.save();
   } catch (error) {
     console.error("Error removing from cart:", error);
+    throw error;
+  }
+};
+export const checkoutCart = async (payment: PaymentDto): Promise<void> => {
+  try {
+    const cart = await CartModel.findOne({
+      user_id: payment.userId,
+      isPaid: false,
+    });
+    if (!cart) {
+      throw new Error("No active cart found for this user.");
+    }
+
+    if (!cart.receipt.length) {
+      throw new Error("Cannot checkout an empty cart.");
+    }
+
+    cart.isPaid = true;
+
+    await cart.save();
+
+    console.log("Cart checked out successfully.");
+  } catch (error) {
+    console.error("Error during checkout:", error);
     throw error;
   }
 };
