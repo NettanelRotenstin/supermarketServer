@@ -1,7 +1,7 @@
 [{
     "name": "Cucumber",
     "img": "https://www.gardenia.net/wp-content/uploads/2023/05/cucumis-sativus.webp",
-    "category":  " Vegetables",
+    "category":  "Vegetables",
     "price": 7,
     "quantity": 20,
     "description": "cucumber from Romania"
@@ -9,49 +9,49 @@
 {
     "name": "Tomato",
     "img": "https://www.thespruce.com/thmb/Ku3cwYvnf5755iSR0aPfoXnwYZY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/vining-and-bush-tomatoes-1835707-04-57f99486b7ed41daa994dded91abef65.jpg",
-    "category":" Vegetables" ,
+    "category":"Vegetables" ,
     "price": 9,
     "quantity": 25,
     "description": "tomato from Israel"
 },{
     "name": "Pepper",
     "img": "https://publish.purewow.net/wp-content/uploads/sites/2/2021/06/types-of-peppers-cherry-peppers.jpg?fit=680%2C489",
-    "category":" Vegetables" ,
+    "category":"Vegetables" ,
     "price": 9,
     "quantity": 45,
     "description": "pepper from Nigeria"
 },{
     "name": "Pumpkin",
     "img": "https://hips.hearstapps.com/hmg-prod/images/urban-halloween-pumpkin-patch-royalty-free-image-1694639201.jpg?crop=1xw:1xh;center,top&resize=1200:*",
-    "category": " Vegetables",
+    "category": "Vegetables",
     "price":4 ,
     "quantity": 32,
     "description": "pumpkin from Iceland"
 },{
     "name":"Onion" ,
     "img": "https://hub.suttons.co.uk/wp-content/uploads/2021/03/dried-onions-table.jpg",
-    "category":" Vegetables" ,
+    "category":"Vegetables" ,
     "price": 6,
     "quantity": 66,
     "description": "onion from Hungary"
 },{
     "name": "Eggplant",
     "img": "https://live.staticflickr.com/3214/3060004604_3748864f30_b.jpg",
-    "category":" Vegetables" ,
+    "category":"Vegetables" ,
     "price": 12,
     "quantity": 111,
     "description": "eggplant from Cypres"
 },{
     "name": "Garlic",
     "img": "https://www.bhf.org.uk/-/media/images/information-support/heart-matters/heart-matters/summer-2018/nutrition/garlic_ss_0518_noexp_620x400.jpg?rev=c6be86ddedc546d2a2df177d1e9e024d",
-    "category":" Vegetables" ,
+    "category":"Vegetables" ,
     "price": 3,
     "quantity": 33,
     "description": "Garlic from Jorden"
 },{
     "name": "Sweet Potato",
     "img": "https://canadianfoodfocus.org/wp-content/uploads/2022/03/sweet-potatoes.jpg",
-    "category": " Vegetables",
+    "category": "Vegetables",
     "price": 14,
     "quantity": 44,
     "description": "sweetpotato from Ethiopia"

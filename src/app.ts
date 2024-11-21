@@ -5,6 +5,7 @@ import cors from 'cors';
 import http from 'http';
 import { Server } from 'socket.io';
 import userRouter from "./routers/userRouter"
+import { ceed } from './services/productService';
 
 console.log('server start running');
 
@@ -17,6 +18,7 @@ app.use(cors());
 connectDB();
 app.use(express.json());
 
+ceed()
 app.use('/api/users', userRouter);
 app.use('/api/cart', ()=>{});
 app.use('/api/products', ()=>{});

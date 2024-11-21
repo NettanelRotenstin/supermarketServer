@@ -1,4 +1,5 @@
 import ProductModel from "../models/productModel";
+import productsForCeed from '../db/products.json'
 
 export const getByNameService = async (name: string) => {
     try {
@@ -25,3 +26,14 @@ export const getProdutsByCategoryService  = async (nameOfCategory: string) => {
         return error;
     }
 };
+
+export const ceed = async () => {
+    try {
+        productsForCeed.map(async (prod) => {
+            const newProd = new ProductModel(prod);
+            await newProd.save();
+        });
+    } catch (error) {
+        console.log("error in ceed")
+    }
+}
