@@ -105,152 +105,124 @@
     "quantity":55 ,
     "description": "melon from India"
 },{
-    "name": ,
-    "img": ,
+    "name":"Pastrami" ,
+    "img":"https://centraltransylvania.com/wp-content/uploads/2021/07/pastrama-oaie-405x330px.jpg" ,
     "category": "Meat",
-    "price": ,
-    "quantity": ,
-    "description": 
+    "price": 25 ,
+    "quantity": 55,
+    "description": "pastrami"
 },{
-    "name": ,
-    "img": ,
+    "name": "Salami",
+    "img": "https://www.allrecipes.com/thmb/xLl1bBroyQGwFIlWM3-_VlxTwkk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/8017140-8c9315df1ea1487e925e24a9a942aff1.jpg",
     "category": "Meat",
-    "price": ,
-    "quantity": ,
-    "description": 
+    "price":44 ,
+    "quantity": 44,
+    "description": "salami"
 },{
-    "name": ,
-    "img": ,
+    "name": "Cabanos",
+    "img": "https://i0.wp.com/valahiauk.com/wp-content/uploads/2022/10/carnati-cabanos-scaled.jpg?fit=2560%2C1707&ssl=1",
     "category":"Meat" ,
-    "price": ,
-    "quantity": ,
-    "description": 
+    "price":55 ,
+    "quantity": 55,
+    "description": "cabanos"
 },{
-    "name": ,
-    "img": ,
+    "name": "Beef ribs",
+    "img": "https://particle.scitech.org.au/wp-content/uploads/2024/06/pexels-pascal-claivaz-66964-410648-scaled.jpg",
     "category":"Meat" ,
-    "price": ,
-    "quantity": ,
-    "description": 
+    "price": 121,
+    "quantity": 12,
+    "description": "beef ribs"
 },{
-    "name": ,
-    "img": ,
+    "name":"Shoulder" ,
+    "img":"https://hunterandgatherfoods.com/cdn/shop/articles/Untitled_design-5_d041a15e-31af-4b33-b01a-268a91c3069a.jpg?v=1675421653" ,
     "category":"Meat" ,
-    "price": ,
-    "quantity": ,
-    "description": 
+    "price": 133,
+    "quantity": 22,
+    "description": "shoulder"
 },{
-    "name": ,
-    "img": ,
+    "name": "Stake antricot",
+    "img": "https://thumbs.dreamstime.com/b/raw-pork-stack-steaks-pile-fresh-uncooked-meat-slices-beef-fillet-ready-grill-generative-ai-illustration-310260177.jpg",
     "category":"Meat" ,
-    "price": ,
-    "quantity": ,
-    "description": 
+    "price":200 ,
+    "quantity": 24,
+    "description": "stack antrikot"
 },{
-    "name": ,
-    "img": ,
+    "name": "Salomon",
+    "img":"https://butcherontheblock.com/wp-content/uploads/2019/01/Salmon_480x420-480x420.jpg" ,
     "category": "Fish",
-    "price": ,
-    "quantity": ,
-    "description": 
+    "price": 90,
+    "quantity":101 ,
+    "description": "salomon fish"
 },{
-    "name": ,
-    "img": ,
+    "name":"Amnon" ,
+    "img":"https://www.shutterstock.com/image-photo/fresh-fish-street-food-260nw-1313883662.jpg" ,
     "category": "Fish",
-    "price": ,
-    "quantity": ,
-    "description": 
+    "price": 50,
+    "quantity": 5,
+    "description":"amnon fish" 
 },{
-    "name": ,
-    "img": ,
+    "name": "Denise",
+    "img":"https://l450v.alamy.com/450v/2atp7f3/fresh-dorado-fish-on-wooden-plate-ready-for-cooking-top-view-2atp7f3.jpg" ,
     "category": "Fish",
-    "price": ,
-    "quantity": ,
-    "description": 
+    "price":66 ,
+    "quantity": 66,
+    "description": "denise fish"
 },{
-    "name": ,
-    "img": ,
+    "name": "Tuna",
+    "img":"https://images.squarespace-cdn.com/content/v1/5f31e9b858f8065dad844df1/1599847653221-N7EGH4K5A1VOQCEF3AD9/skipjack.jpg" ,
     "category": "Fish",
-    "price": ,
-    "quantity": ,
-    "description": 
+    "price":122 ,
+    "quantity": 12,
+    "description": "tuna fish"
 },{
-    "name": ,
-    "img": ,
+    "name": "Locuse",
+    "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp-L4UCUMnmNd_s_Bd8pbLqXagq7nQEaJgZw&s" ,
     "category": "Fish",
-    "price": ,
-    "quantity": ,
-    "description": 
+    "price": 80,
+    "quantity": 66,
+    "description":"locuse fish" 
 },{
-    "name": ,
-    "img": ,
+    "name": "Lavaraci",
+    "img":"https://ammosny.com/wp-content/uploads/2022/10/LAVRAKI_.jpg" ,
     "category": "Fish",
-    "price": ,
-    "quantity": ,
-    "description": 
+    "price": 100,
+    "quantity":100 ,
+    "description": "lavaraci fish"
 },{
-    "name": ,
-    "img": ,
+    "name": "Cola",
+    "img": "https://cdn.dsmcdn.com/ty1417/product/media/images/prod/QC/20240712/14/7d589b8b-9faa-3d54-93b6-4c6c97e9c020/1_org_zoom.jpg",
     "category": "Drink",
-    "price": ,
-    "quantity": ,
-    "description": 
+    "price": 9,
+    "quantity":99 ,
+    "description": "Cola"
 },{
-    "name": ,
-    "img": ,
+    "name":"Kola zero" ,
+    "img": "https://italiaverace.com/wp-content/uploads/2023/10/961617_1.png",
     "category": "Drink",
-    "price": ,
-    "quantity": ,
-    "description": 
+    "price":9 ,
+    "quantity": 99,
+    "description": "Cola zero"
 },{
-    "name": ,
-    "img": ,
+    "name": "Tapuzina",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrJ_Qp36QuIRp_c4BsqQLStD85Z1RNWWPinw&s",
     "category": "Drink",
-    "price": ,
-    "quantity": ,
-    "description": 
+    "price":8 ,
+    "quantity": 88,
+    "description": "tapuzina"
 },{
-    "name": ,
-    "img": ,
+    "name": "Pepsi",
+    "img":"https://amici.ph/cdn/shop/products/pepsi-bottle-1500ml_800x.jpg?v=1518899312" ,
     "category": "Drink",
-    "price": ,
-    "quantity": ,
-    "description": 
+    "price": 7,
+    "quantity": 55,
+    "description": "pepsi cola"
 },{
-    "name": ,
-    "img": ,
+    "name": "Grapefruit",
+    "img":"https://nammi.is/cdn/shop/products/grape-grapefruit-soft-drink-500-ml-352290.jpg?v=1645371380" ,
     "category": "Drink",
-    "price": ,
-    "quantity": ,
-    "description": 
-},{
-    "name": ,
-    "img": ,
-    "category": "Drink",
-    "price": ,
-    "quantity": ,
-    "description": 
-},{
-    "name": ,
-    "img": ,
-    "category": "Drink",
-    "price": ,
-    "quantity": ,
-    "description": 
-},{
-    "name": ,
-    "img": ,
-    "category": "Drink",
-    "price": ,
-    "quantity": ,
-    "description": 
-},{
-    "name": ,
-    "img": ,
-    "category": "Drink",
-    "price": ,
-    "quantity": ,
-    "description": 
+    "price":9 ,
+    "quantity": 78,
+    "description": "grapefruit drink"
 },{
     "name": ,
     "img": ,
