@@ -19,9 +19,9 @@ export const getProductByName = async (req: Request, res: Response):Promise<void
 };
 export const getProdutsByCategory = async (req: Request, res: Response):Promise<void> => {
     try {
-        const result = await getProdutsByCategoryService(req.params.name)
+        const result = await getProdutsByCategoryService(req.params.category)
         res.status(201).json({
-            msg: "user login succesfull",
+            msg: "get by category",
             err: false,
             data:result
         });
@@ -37,7 +37,7 @@ export const getAllProducts = async (req: Request, res: Response):Promise<void> 
     try {
         const result = await getAllProdutsService()
         res.status(201).json({
-            msg: "user login succesfull",
+            msg: "get all products",
             err: false,
             data:result
         });

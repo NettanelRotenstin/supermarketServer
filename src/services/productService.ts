@@ -11,7 +11,7 @@ export const getByNameService = async (name: string) => {
 
 export const getAllProdutsService  = async () => {
     try {
-        const result = await ProductModel.find({}).lean();
+        const result = await ProductModel.find({}).lean();        
         return result;
     } catch (error) {
         return error;
