@@ -7,7 +7,10 @@ export interface IProduct extends Document {
     category: category;
     price: number;
     quantity: number;
+    prevPrice?: Number;
+    description: string;
 }
+
 
 export const productSchema = new Schema<IProduct>({
     name: {
@@ -30,6 +33,14 @@ export const productSchema = new Schema<IProduct>({
     quantity: {
         type: Number,
         required: true,
+    },
+    prevPrice:{
+        type:Number,
+        required: false
+    },
+    description:{
+        type:String,
+        required: false
     },
 });
 
