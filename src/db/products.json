@@ -1,0 +1,276 @@
+[{
+    "name": "Cucumber",
+    "img": "https://www.gardenia.net/wp-content/uploads/2023/05/cucumis-sativus.webp",
+    "category":  " Vegetables",
+    "price": 7,
+    "quantity": 20,
+    "description": "cucumber from Romania"
+},
+{
+    "name": "Tomato",
+    "img": "https://www.thespruce.com/thmb/Ku3cwYvnf5755iSR0aPfoXnwYZY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/vining-and-bush-tomatoes-1835707-04-57f99486b7ed41daa994dded91abef65.jpg",
+    "category":" Vegetables" ,
+    "price": 9,
+    "quantity": 25,
+    "description": "tomato from Israel"
+},{
+    "name": "Pepper",
+    "img": "https://publish.purewow.net/wp-content/uploads/sites/2/2021/06/types-of-peppers-cherry-peppers.jpg?fit=680%2C489",
+    "category":" Vegetables" ,
+    "price": 9,
+    "quantity": 45,
+    "description": "pepper from Nigeria"
+},{
+    "name": "Pumpkin",
+    "img": "https://hips.hearstapps.com/hmg-prod/images/urban-halloween-pumpkin-patch-royalty-free-image-1694639201.jpg?crop=1xw:1xh;center,top&resize=1200:*",
+    "category": " Vegetables",
+    "price":4 ,
+    "quantity": 32,
+    "description": "pumpkin from Iceland"
+},{
+    "name":"Onion" ,
+    "img": "https://hub.suttons.co.uk/wp-content/uploads/2021/03/dried-onions-table.jpg",
+    "category":" Vegetables" ,
+    "price": 6,
+    "quantity": 66,
+    "description": "onion from Hungary"
+},{
+    "name": "Eggplant",
+    "img": "https://live.staticflickr.com/3214/3060004604_3748864f30_b.jpg",
+    "category":" Vegetables" ,
+    "price": 12,
+    "quantity": 111,
+    "description": "eggplant from Cypres"
+},{
+    "name": "Garlic",
+    "img": "https://www.bhf.org.uk/-/media/images/information-support/heart-matters/heart-matters/summer-2018/nutrition/garlic_ss_0518_noexp_620x400.jpg?rev=c6be86ddedc546d2a2df177d1e9e024d",
+    "category":" Vegetables" ,
+    "price": 3,
+    "quantity": 33,
+    "description": "Garlic from Jorden"
+},{
+    "name": "Sweet Potato",
+    "img": "https://canadianfoodfocus.org/wp-content/uploads/2022/03/sweet-potatoes.jpg",
+    "category": " Vegetables",
+    "price": 14,
+    "quantity": 44,
+    "description": "sweetpotato from Ethiopia"
+},{
+    "name": "Apple",
+    "img":"https://www.vanmeuwen.com/product_images/101/APPL_DISCOVERY_L34297.jpg" ,
+    "category": "Fruits",
+    "price": 7,
+    "quantity": 22,
+    "description": "apple from UK"
+},{
+    "name": "Orange",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Ambersweet_oranges.jpg/800px-Ambersweet_oranges.jpg",
+    "category":"Fruits" ,
+    "price": 7,
+    "quantity": 77,
+    "description": "orange from USA"
+},{
+    "name": "Pear",
+    "img": "https://foodwise.org/wp-content/uploads/2023/11/conference_pears-1024x683.jpg",
+    "category":"Fruits" ,
+    "price": 7,
+    "quantity": 55,
+    "description": "pear from Oman"
+},{
+    "name":"Watermelon" ,
+    "img":"https://cdn4.dravinashtank.in/wp-content/uploads/2023/08/Watermelon.jpg" ,
+    "category": "Fruits",
+    "price": 8,
+    "quantity": 66,
+    "description": "watermelon from Germany"
+},{
+    "name": "Pineapple",
+    "img": "https://pic1.calcalist.co.il/PicServer3/2017/06/27/737675/shutterstock_164089904_l.jpg",
+    "category":"Fruits" ,
+    "price": 7,
+    "quantity": 77,
+    "description": "pineapple from Israel"
+},{
+    "name":"Kiwi" ,
+    "img": "https://cdn.britannica.com/73/160673-050-22F29F6B/Cluster-kiwis.jpg?w=400&h=225&c=crop",
+    "category": "Fruits",
+    "price": 4,
+    "quantity": 44,
+    "description": "kiwi from Checkrepublic"
+},{
+    "name": "Melon",
+    "img": "https://foodprint.org/wp-content/uploads/2018/10/AdobeStock_259156304.jpeg",
+    "category": "Fruits",
+    "price": 5,
+    "quantity":55 ,
+    "description": "melon from India"
+},{
+    "name":"Pastrami" ,
+    "img":"https://centraltransylvania.com/wp-content/uploads/2021/07/pastrama-oaie-405x330px.jpg" ,
+    "category": "Meat",
+    "price": 25 ,
+    "quantity": 55,
+    "description": "pastrami"
+},{
+    "name": "Salami",
+    "img": "https://www.allrecipes.com/thmb/xLl1bBroyQGwFIlWM3-_VlxTwkk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/8017140-8c9315df1ea1487e925e24a9a942aff1.jpg",
+    "category": "Meat",
+    "price":44 ,
+    "quantity": 44,
+    "description": "salami"
+},{
+    "name": "Cabanos",
+    "img": "https://i0.wp.com/valahiauk.com/wp-content/uploads/2022/10/carnati-cabanos-scaled.jpg?fit=2560%2C1707&ssl=1",
+    "category":"Meat" ,
+    "price":55 ,
+    "quantity": 55,
+    "description": "cabanos"
+},{
+    "name": "Beef ribs",
+    "img": "https://particle.scitech.org.au/wp-content/uploads/2024/06/pexels-pascal-claivaz-66964-410648-scaled.jpg",
+    "category":"Meat" ,
+    "price": 121,
+    "quantity": 12,
+    "description": "beef ribs"
+},{
+    "name":"Shoulder" ,
+    "img":"https://hunterandgatherfoods.com/cdn/shop/articles/Untitled_design-5_d041a15e-31af-4b33-b01a-268a91c3069a.jpg?v=1675421653" ,
+    "category":"Meat" ,
+    "price": 133,
+    "quantity": 22,
+    "description": "shoulder"
+},{
+    "name": "Stake antricot",
+    "img": "https://thumbs.dreamstime.com/b/raw-pork-stack-steaks-pile-fresh-uncooked-meat-slices-beef-fillet-ready-grill-generative-ai-illustration-310260177.jpg",
+    "category":"Meat" ,
+    "price":200 ,
+    "quantity": 24,
+    "description": "stack antrikot"
+},{
+    "name": "Salomon",
+    "img":"https://butcherontheblock.com/wp-content/uploads/2019/01/Salmon_480x420-480x420.jpg" ,
+    "category": "Fish",
+    "price": 90,
+    "quantity":101 ,
+    "description": "salomon fish"
+},{
+    "name":"Amnon" ,
+    "img":"https://www.shutterstock.com/image-photo/fresh-fish-street-food-260nw-1313883662.jpg" ,
+    "category": "Fish",
+    "price": 50,
+    "quantity": 5,
+    "description":"amnon fish" 
+},{
+    "name": "Denise",
+    "img":"https://l450v.alamy.com/450v/2atp7f3/fresh-dorado-fish-on-wooden-plate-ready-for-cooking-top-view-2atp7f3.jpg" ,
+    "category": "Fish",
+    "price":66 ,
+    "quantity": 66,
+    "description": "denise fish"
+},{
+    "name": "Tuna",
+    "img":"https://images.squarespace-cdn.com/content/v1/5f31e9b858f8065dad844df1/1599847653221-N7EGH4K5A1VOQCEF3AD9/skipjack.jpg" ,
+    "category": "Fish",
+    "price":122 ,
+    "quantity": 12,
+    "description": "tuna fish"
+},{
+    "name": "Locuse",
+    "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp-L4UCUMnmNd_s_Bd8pbLqXagq7nQEaJgZw&s" ,
+    "category": "Fish",
+    "price": 80,
+    "quantity": 66,
+    "description":"locuse fish" 
+},{
+    "name": "Lavaraci",
+    "img":"https://ammosny.com/wp-content/uploads/2022/10/LAVRAKI_.jpg" ,
+    "category": "Fish",
+    "price": 100,
+    "quantity":100 ,
+    "description": "lavaraci fish"
+},{
+    "name": "Cola",
+    "img": "https://cdn.dsmcdn.com/ty1417/product/media/images/prod/QC/20240712/14/7d589b8b-9faa-3d54-93b6-4c6c97e9c020/1_org_zoom.jpg",
+    "category": "Drink",
+    "price": 9,
+    "quantity":99 ,
+    "description": "Cola"
+},{
+    "name":"Kola zero" ,
+    "img": "https://italiaverace.com/wp-content/uploads/2023/10/961617_1.png",
+    "category": "Drink",
+    "price":9 ,
+    "quantity": 99,
+    "description": "Cola zero"
+},{
+    "name": "Tapuzina",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrJ_Qp36QuIRp_c4BsqQLStD85Z1RNWWPinw&s",
+    "category": "Drink",
+    "price":8 ,
+    "quantity": 88,
+    "description": "tapuzina"
+},{
+    "name": "Pepsi",
+    "img":"https://amici.ph/cdn/shop/products/pepsi-bottle-1500ml_800x.jpg?v=1518899312" ,
+    "category": "Drink",
+    "price": 7,
+    "quantity": 55,
+    "description": "pepsi cola"
+},{
+    "name": "Grapefruit",
+    "img":"https://nammi.is/cdn/shop/products/grape-grapefruit-soft-drink-500-ml-352290.jpg?v=1645371380" ,
+    "category": "Drink",
+    "price":9 ,
+    "quantity": 78,
+    "description": "grapefruit drink"
+},{
+    "name": "Aconomica",
+    "img":"https://yt3.googleusercontent.com/ytc/AIdro_k5TYcUzwKkeFzzYVrgCz-3c4YWklyIcoJ24emoPILw1I0=s900-c-k-c0x00ffffff-no-rj" ,
+    "category":"Dry" ,
+    "price":20 ,
+    "quantity": 22,
+    "description": "aconomica made by Sano"
+},{
+    "name": "window spray",
+    "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT4kf-uly696rK0EFKb_noY7TUl9De05pmXg&s" ,
+    "category": "Dry",
+    "price": 13,
+    "quantity": 13,
+    "description": "window spray"
+},{
+    "name":"Laundry" ,
+    "img": "https://spraynwash.com/static/81dcb2ec4d8b4f5d3151349d90f7998e/f08e0/zkrprfykhueqfsl3pknn.jpg",
+    "category":"Dry" ,
+    "price":45 ,
+    "quantity": 45,
+    "description":"laundry" 
+}, {
+    "name": "Milk",
+    "img": "https://sapinsdairy.com/wp-content/uploads/2021/12/milk-bottle.png",
+    "category": "Milk",
+    "price":6 ,
+    "quantity":666 ,
+    "description": "milk buttle"
+},{
+    "name":"Cheese" ,
+    "img": "https://m.media-amazon.com/images/I/613E-ssfqWL.jpg",
+    "category": "Milk",
+    "price":13 ,
+    "quantity":13 ,
+    "description": "cheese"
+},{
+    "name":"Yellow cheese" ,
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZgeiz37lSjcBI8EeCwlVcKnLcTJnt9LFEqQ&s",
+    "category": "Milk",
+    "price": 32,
+    "quantity": 333,
+    "description": "yellow cheese"
+},{
+    "name":"Teomim" ,
+    "img": "https://files.5dakot.com/33094/conversions/large-(2)-thumb.jpg",
+    "category": "Milk",
+    "price": 3,
+    "quantity": 333,
+    "description": "teomim"
+} 
+]
