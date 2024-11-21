@@ -224,88 +224,53 @@
     "quantity": 78,
     "description": "grapefruit drink"
 },{
-    "name": ,
-    "img": ,
+    "name": "Aconomica",
+    "img":"https://yt3.googleusercontent.com/ytc/AIdro_k5TYcUzwKkeFzzYVrgCz-3c4YWklyIcoJ24emoPILw1I0=s900-c-k-c0x00ffffff-no-rj" ,
     "category":"Dry" ,
-    "price": ,
-    "quantity": ,
-    "description": 
+    "price":20 ,
+    "quantity": 22,
+    "description": "aconomica made by Sano"
 },{
-    "name": ,
-    "img": ,
+    "name": "window spray",
+    "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT4kf-uly696rK0EFKb_noY7TUl9De05pmXg&s" ,
     "category": "Dry",
-    "price": ,
-    "quantity": ,
-    "description": 
+    "price": 13,
+    "quantity": 13,
+    "description": "window spray"
 },{
-    "name": ,
-    "img": ,
+    "name":"Laundry" ,
+    "img": "https://spraynwash.com/static/81dcb2ec4d8b4f5d3151349d90f7998e/f08e0/zkrprfykhueqfsl3pknn.jpg",
     "category":"Dry" ,
-    "price": ,
-    "quantity": ,
-    "description": 
-},{
-    "name": ,
-    "img": ,
-    "category":"Dry" ,
-    "price": ,
-    "quantity": ,
-    "description": 
-},{
-    "name": ,
-    "img": ,
+    "price":45 ,
+    "quantity": 45,
+    "description":"laundry" 
+}, {
+    "name": "Milk",
+    "img": "https://sapinsdairy.com/wp-content/uploads/2021/12/milk-bottle.png",
     "category": "Milk",
-    "price": ,
-    "quantity": ,
-    "description": 
+    "price":6 ,
+    "quantity":666 ,
+    "description": "milk buttle"
 },{
-    "name": ,
-    "img": ,
+    "name":"Cheese" ,
+    "img": "https://m.media-amazon.com/images/I/613E-ssfqWL.jpg",
     "category": "Milk",
-    "price": ,
-    "quantity": ,
-    "description": 
+    "price":13 ,
+    "quantity":13 ,
+    "description": "cheese"
 },{
-    "name": ,
-    "img": ,
+    "name":"Yellow cheese" ,
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZgeiz37lSjcBI8EeCwlVcKnLcTJnt9LFEqQ&s",
     "category": "Milk",
-    "price": ,
-    "quantity": ,
-    "description": 
+    "price": 32,
+    "quantity": 333,
+    "description": "yellow cheese"
 },{
-    "name": ,
-    "img": ,
+    "name":"Teomim" ,
+    "img": "https://files.5dakot.com/33094/conversions/large-(2)-thumb.jpg",
     "category": "Milk",
-    "price": ,
-    "quantity": ,
-    "description": 
-},{
-    "name": ,
-    "img": ,
-    "category": "Milk",
-    "price": ,
-    "quantity": ,
-    "description": 
-},{
-    "name": ,
-    "img": ,
-    "category": "Milk",
-    "price": ,
-    "quantity": ,
-    "description": 
-},{
-    "name": ,
-    "img": ,
-    "category": "Milk",
-    "price": ,
-    "quantity": ,
-    "description": 
-},{
-    "name": ,
-    "img": ,
-    "category":"Milk" ,
-    "price": ,
-    "quantity": ,
-    "description": 
+    "price": 3,
+    "quantity": 333,
+    "description": "teomim"
 } 
 ]
