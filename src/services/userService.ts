@@ -2,7 +2,8 @@ import { compare, hash } from "bcrypt";
 import { LoginDto, RegisterDto } from "../types/dto/registerUser";
 import userModel from "../models/userModel";
 import { IUser } from "../types/interface/Iuser";
-import Jwt  from "jsonwebtoken";
+import Jwt from "jsonwebtoken";
+import PayloadDto from "../types/dto/payload";
 
 export const createNewUser = async (
   newUser: RegisterDto
@@ -27,26 +28,24 @@ export const createNewUser = async (
   }
 };
 export const userLogin = async (user: LoginDto) => {
-    try {
-      const userFromDb = await userModel.findOne({ username: user.username }).lean();
-      if (!userFromDb) throw new Error("User not found");
-      const match = await compare(user.password, userFromDb.password);
-      if (!match) throw new Error("Worng password");
-  
-      const token = Jwt.sign(
-        {
-          userId: userFromDb._id,
-          isAdmin: userFromDb.creditCard,
-          usename: userFromDb.username,
-        },
-        process.env.JWT_SECRET as string,
-        {
-          expiresIn: "10m",
-        }
-      );
-  
-      return { ...userFromDb, token, password: "********" };
-    } catch (error) {
-      return error;
-    }
-  };
+  try {
+    const userFromDb = await userModel
+      .findOne({ username: user.username })
+      .lean();
+    if (!userFromDb) throw new Error("User not found");
+    const match = await compare(user.password, userFromDb.password);
+    if (!match) throw new Error("Worng password");
+    const payload: PayloadDto = {
+      userId: userFromDb._id as string,
+      creditCard: userFromDb.creditCard,
+      username: userFromDb.username,
+    };
+    const token = Jwt.sign(payload, process.env.JWT_SECRET as string, {
+      expiresIn: "10m",
+    });
+
+    return { ...userFromDb, token, password: "********" };
+  } catch (error) {
+    return error;
+  }
+};
