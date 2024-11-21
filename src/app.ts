@@ -6,8 +6,8 @@ import http from 'http';
 import { Server } from 'socket.io';
 import userRouter from "./routers/userRouter"
 import productRouter from "./routers/productRouter"
-import cartRouter from "./routers/cartRouter"
 import verifyUser from './middleware/verifyUser';
+import cartRouter from "./routers/cartRouter"
 import { ceed } from './services/productService';
 
 console.log('server start running');
