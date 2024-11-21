@@ -1,8 +1,9 @@
-export enum category {
+export enum categoryEnum {
     Fruits = "Fruits",
     Vegetables = "Vegetables",
-    Grains = "Grains",
-    Dairy = "Dairy",
-    Nuts_and_Seeds = "Nuts_and_Seeds",
-    Sweets = "Sweets",
+    Meat = "Meat",
+    Milk = "Milk",
+    Drink = "Drink",
+    Dry = "Dry",
+    Fish = "Fish"
 }
