@@ -8,6 +8,20 @@ import { HistoryDto } from "../types/dto/historyDto";
 
 export const cancelCartService = async (id: string) => {
   try {
+    const cart = await CartModel.findById(id);
+    if (!cart) {
+      throw new Error("Cart not found");
+    }
+
+    for (const item of cart.receipt) {
+      const product = await ProductModel.findById(item.idproduct);
+      if (product) {
+        product.quantity += item.quantity;
+        await product.save();
+      } else {
+        console.warn(`Product with ID ${item.idproduct} not found`);
+      }
+    }
     const result = await CartModel.findByIdAndDelete(id);
     return result;
   } catch (error) {
@@ -123,9 +137,12 @@ export const checkoutCart = async (payment: PaymentDto): Promise<void> => {
     throw error;
   }
 };
-export const getHistory = async (user:HistoryDto) => {
+export const getHistory = async (user: HistoryDto) => {
   try {
-    const cart = await CartModel.findOne({ user_id: user.userId, isPaid: true }).lean();
+    const cart = await CartModel.findOne({
+      user_id: user.userId,
+      isPaid: true,
+    }).lean();
     return cart?.receipt;
   } catch (error) {
     return error;
