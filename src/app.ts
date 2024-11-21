@@ -21,10 +21,8 @@ connectDB();
 app.use(express.json());
 
 app.use('/api/users', userRouter);
-app.use('/api/cart', ()=>{});
 app.use('/api/products', productRouter);
 app.use('/api/cart', verifyUser,cartRouter);
-app.use('/api/products', ()=>{});
 export const io = new Server(server,{ cors: { origin: "*" } });
 io.on('connection', (socket) => {
     console.log('Client connected');
