@@ -4,6 +4,7 @@ import ProductModel from "../models/productModel";
 import { CartDto } from "../types/dto/cartDto";
 import { DelteteCartDto } from "../types/dto/deleteCartDto";
 import { PaymentDto } from "../types/dto/dtoPayment";
+import { HistoryDto } from "../types/dto/historyDto";
 
 export const cancelCartService = async (id: string) => {
   try {
@@ -120,5 +121,13 @@ export const checkoutCart = async (payment: PaymentDto): Promise<void> => {
   } catch (error) {
     console.error("Error during checkout:", error);
     throw error;
+  }
+};
+export const getHistory = async (user:HistoryDto) => {
+  try {
+    const cart = await CartModel.findOne({ user_id: user.userId, isPaid: true }).lean();
+    return cart?.receipt;
+  } catch (error) {
+    return error;
   }
 };
