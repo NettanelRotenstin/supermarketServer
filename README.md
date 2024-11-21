@@ -22,6 +22,7 @@ user_id:mongoose...
 3:27
 totalPrice:number
 receipt:[{_idproduct,quantity,price}] (edited) 
+isPaid: boolean
 date:date
  
 
