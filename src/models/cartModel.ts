@@ -4,6 +4,8 @@ export interface ICart extends Document {
     user_id: Types.ObjectId;
     totalPrice: number;
     receipt: [{ idproduct: Types.ObjectId; quantity: number; price: number }];
+    isPaid: boolean;
+    date: Date;
 }
 
 export const cartSchema = new Schema<ICart>({
@@ -25,6 +27,14 @@ export const cartSchema = new Schema<ICart>({
             },
         ],
         required: true,
+    },
+    isPaid: {
+        type: Boolean,
+        required: true,
+        default: false,
+    },
+    date: {
+        type: Date
     },
 });
 
