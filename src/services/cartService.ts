@@ -2,6 +2,7 @@ import { Types } from "mongoose";
 import CartModel from "../models/cartModel";
 import ProductModel from "../models/productModel";
 import { CartDto } from "../types/dto/cartDto";
+import { DelteteCartDto } from "../types/dto/deleteCartDto";
 
 export const cancelCartService = async (id: string) => {
   try {
@@ -53,6 +54,42 @@ export const addToCart = async (Cart: CartDto): Promise<void> => {
     await product.save();
   } catch (error) {
     console.error("Error adding to cart:", error);
+    throw error;
+  }
+};
+
+export const removeFromCart = async (
+  deleteCart:DelteteCartDto
+): Promise<void> => {
+  try {
+    const product = await ProductModel.findOne({ name: deleteCart.productName });
+    if (!product) {
+      throw new Error("No such product exists.");
+    }
+
+    const cart = await CartModel.findOne({ user_id: deleteCart.userId, isPaid: false });
+    if (!cart) {
+      throw new Error("No active cart found for this user.");
+    }
+
+    const itemIndex = cart.receipt.findIndex(
+      (item) => item.idproduct === product._id
+    );
+    if (itemIndex === -1) {
+      throw new Error("Product not found in cart.");
+    }
+
+    const item = cart.receipt[itemIndex];
+    cart.receipt.splice(itemIndex, 1);
+
+    cart.totalPrice -= item.price * item.quantity;
+
+    await cart.save();
+
+    product.quantity += item.quantity;
+    await product.save();
+  } catch (error) {
+    console.error("Error removing from cart:", error);
     throw error;
   }
 };
