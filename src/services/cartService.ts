@@ -115,13 +115,19 @@ export const removeFromCart = async (
 };
 export const checkoutCart = async (payment: PaymentDto): Promise<void> => {
   try {
+    if (!payment.creditCard) {
+      throw new Error("Credit card is required.");
+    }
     const cart = await CartModel.findOne({
       user_id: payment.userId,
       isPaid: false,
-    });
+    }).populate("user_id") as any;
+
     if (!cart) {
       throw new Error("No active cart found for this user.");
     }
+    if(cart.user_id.creditCard !== payment.creditCard){
+      throw new Error("Wrong credit card");}
 
     if (!cart.receipt.length) {
       throw new Error("Cannot checkout an empty cart.");
