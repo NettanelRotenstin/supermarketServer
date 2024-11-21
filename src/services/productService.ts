@@ -9,7 +9,7 @@ export const getByNameService = async (name: string) => {
     }
 };
 
-export const getAllProduts = async (name: string) => {
+export const getAllProdutsService  = async (name: string) => {
     try {
         const result = await ProductModel.find({}).lean();
         return result;
@@ -17,7 +17,7 @@ export const getAllProduts = async (name: string) => {
         return error;
     }
 };
-export const getProdutsByCategory = async (nameOfCategory: string) => {
+export const getProdutsByCategoryService  = async (nameOfCategory: string) => {
     try {
         const result = await ProductModel.find({category: nameOfCategory}).lean();
         return result
