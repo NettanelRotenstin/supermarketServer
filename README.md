@@ -8,6 +8,7 @@ creditCard:string
 product schema:
 name:string
 category:enumCategories
+image: string
 price:number
 quantity:number
 prevPrice?:number
@@ -18,7 +19,6 @@ description:string
 
 cart schema:
 user_id:mongoose...
-products:[]monggose schema product
 3:27
 totalPrice:number
 receipt:{_idproduct,quantity,price} (edited) 
