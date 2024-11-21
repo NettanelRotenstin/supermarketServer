@@ -4,5 +4,6 @@ export enum categoryEnum {
     Meat = "Meat",
     Milk = "Milk",
     Drink = "Drink",
-    Dry = "Dry"
+    Dry = "Dry",
+    Fish = "Fish"
 }

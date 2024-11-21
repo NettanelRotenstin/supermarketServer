@@ -1,0 +1,339 @@
+[{
+    "name": "Cucumber",
+    "img": "https://www.gardenia.net/wp-content/uploads/2023/05/cucumis-sativus.webp",
+    "category":  " Vegetables",
+    "price": 7,
+    "quantity": 20,
+    "description": "cucumber from Romania"
+},
+{
+    "name": "Tomato",
+    "img": "https://www.thespruce.com/thmb/Ku3cwYvnf5755iSR0aPfoXnwYZY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/vining-and-bush-tomatoes-1835707-04-57f99486b7ed41daa994dded91abef65.jpg",
+    "category":" Vegetables" ,
+    "price": 9,
+    "quantity": 25,
+    "description": "tomato from Israel"
+},{
+    "name": "Pepper",
+    "img": "https://publish.purewow.net/wp-content/uploads/sites/2/2021/06/types-of-peppers-cherry-peppers.jpg?fit=680%2C489",
+    "category":" Vegetables" ,
+    "price": 9,
+    "quantity": 45,
+    "description": "pepper from Nigeria"
+},{
+    "name": "Pumpkin",
+    "img": "https://hips.hearstapps.com/hmg-prod/images/urban-halloween-pumpkin-patch-royalty-free-image-1694639201.jpg?crop=1xw:1xh;center,top&resize=1200:*",
+    "category": " Vegetables",
+    "price":4 ,
+    "quantity": 32,
+    "description": "pumpkin from Iceland"
+},{
+    "name":"Onion" ,
+    "img": "https://hub.suttons.co.uk/wp-content/uploads/2021/03/dried-onions-table.jpg",
+    "category":" Vegetables" ,
+    "price": 6,
+    "quantity": 66,
+    "description": "onion from Hungary"
+},{
+    "name": "Eggplant",
+    "img": "https://live.staticflickr.com/3214/3060004604_3748864f30_b.jpg",
+    "category":" Vegetables" ,
+    "price": 12,
+    "quantity": 111,
+    "description": "eggplant from Cypres"
+},{
+    "name": "Garlic",
+    "img": "https://www.bhf.org.uk/-/media/images/information-support/heart-matters/heart-matters/summer-2018/nutrition/garlic_ss_0518_noexp_620x400.jpg?rev=c6be86ddedc546d2a2df177d1e9e024d",
+    "category":" Vegetables" ,
+    "price": 3,
+    "quantity": 33,
+    "description": "Garlic from Jorden"
+},{
+    "name": "Sweet Potato",
+    "img": "https://canadianfoodfocus.org/wp-content/uploads/2022/03/sweet-potatoes.jpg",
+    "category": " Vegetables",
+    "price": 14,
+    "quantity": 44,
+    "description": "sweetpotato from Ethiopia"
+},{
+    "name": "Apple",
+    "img":"https://www.vanmeuwen.com/product_images/101/APPL_DISCOVERY_L34297.jpg" ,
+    "category": "Fruits",
+    "price": 7,
+    "quantity": 22,
+    "description": "apple from UK"
+},{
+    "name": "Orange",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Ambersweet_oranges.jpg/800px-Ambersweet_oranges.jpg",
+    "category":"Fruits" ,
+    "price": 7,
+    "quantity": 77,
+    "description": "orange from USA"
+},{
+    "name": "Pear",
+    "img": "https://foodwise.org/wp-content/uploads/2023/11/conference_pears-1024x683.jpg",
+    "category":"Fruits" ,
+    "price": 7,
+    "quantity": 55,
+    "description": "pear from Oman"
+},{
+    "name":"Watermelon" ,
+    "img":"https://cdn4.dravinashtank.in/wp-content/uploads/2023/08/Watermelon.jpg" ,
+    "category": "Fruits",
+    "price": 8,
+    "quantity": 66,
+    "description": "watermelon from Germany"
+},{
+    "name": "Pineapple",
+    "img": "https://pic1.calcalist.co.il/PicServer3/2017/06/27/737675/shutterstock_164089904_l.jpg",
+    "category":"Fruits" ,
+    "price": 7,
+    "quantity": 77,
+    "description": "pineapple from Israel"
+},{
+    "name":"Kiwi" ,
+    "img": "https://cdn.britannica.com/73/160673-050-22F29F6B/Cluster-kiwis.jpg?w=400&h=225&c=crop",
+    "category": "Fruits",
+    "price": 4,
+    "quantity": 44,
+    "description": "kiwi from Checkrepublic"
+},{
+    "name": "Melon",
+    "img": "https://foodprint.org/wp-content/uploads/2018/10/AdobeStock_259156304.jpeg",
+    "category": "Fruits",
+    "price": 5,
+    "quantity":55 ,
+    "description": "melon from India"
+},{
+    "name": ,
+    "img": ,
+    "category": "Meat",
+    "price": ,
+    "quantity": ,
+    "description": 
+},{
+    "name": ,
+    "img": ,
+    "category": "Meat",
+    "price": ,
+    "quantity": ,
+    "description": 
+},{
+    "name": ,
+    "img": ,
+    "category":"Meat" ,
+    "price": ,
+    "quantity": ,
+    "description": 
+},{
+    "name": ,
+    "img": ,
+    "category":"Meat" ,
+    "price": ,
+    "quantity": ,
+    "description": 
+},{
+    "name": ,
+    "img": ,
+    "category":"Meat" ,
+    "price": ,
+    "quantity": ,
+    "description": 
+},{
+    "name": ,
+    "img": ,
+    "category":"Meat" ,
+    "price": ,
+    "quantity": ,
+    "description": 
+},{
+    "name": ,
+    "img": ,
+    "category": "Fish",
+    "price": ,
+    "quantity": ,
+    "description": 
+},{
+    "name": ,
+    "img": ,
+    "category": "Fish",
+    "price": ,
+    "quantity": ,
+    "description": 
+},{
+    "name": ,
+    "img": ,
+    "category": "Fish",
+    "price": ,
+    "quantity": ,
+    "description": 
+},{
+    "name": ,
+    "img": ,
+    "category": "Fish",
+    "price": ,
+    "quantity": ,
+    "description": 
+},{
+    "name": ,
+    "img": ,
+    "category": "Fish",
+    "price": ,
+    "quantity": ,
+    "description": 
+},{
+    "name": ,
+    "img": ,
+    "category": "Fish",
+    "price": ,
+    "quantity": ,
+    "description": 
+},{
+    "name": ,
+    "img": ,
+    "category": "Drink",
+    "price": ,
+    "quantity": ,
+    "description": 
+},{
+    "name": ,
+    "img": ,
+    "category": "Drink",
+    "price": ,
+    "quantity": ,
+    "description": 
+},{
+    "name": ,
+    "img": ,
+    "category": "Drink",
+    "price": ,
+    "quantity": ,
+    "description": 
+},{
+    "name": ,
+    "img": ,
+    "category": "Drink",
+    "price": ,
+    "quantity": ,
+    "description": 
+},{
+    "name": ,
+    "img": ,
+    "category": "Drink",
+    "price": ,
+    "quantity": ,
+    "description": 
+},{
+    "name": ,
+    "img": ,
+    "category": "Drink",
+    "price": ,
+    "quantity": ,
+    "description": 
+},{
+    "name": ,
+    "img": ,
+    "category": "Drink",
+    "price": ,
+    "quantity": ,
+    "description": 
+},{
+    "name": ,
+    "img": ,
+    "category": "Drink",
+    "price": ,
+    "quantity": ,
+    "description": 
+},{
+    "name": ,
+    "img": ,
+    "category": "Drink",
+    "price": ,
+    "quantity": ,
+    "description": 
+},{
+    "name": ,
+    "img": ,
+    "category":"Dry" ,
+    "price": ,
+    "quantity": ,
+    "description": 
+},{
+    "name": ,
+    "img": ,
+    "category": "Dry",
+    "price": ,
+    "quantity": ,
+    "description": 
+},{
+    "name": ,
+    "img": ,
+    "category":"Dry" ,
+    "price": ,
+    "quantity": ,
+    "description": 
+},{
+    "name": ,
+    "img": ,
+    "category":"Dry" ,
+    "price": ,
+    "quantity": ,
+    "description": 
+},{
+    "name": ,
+    "img": ,
+    "category": "Milk",
+    "price": ,
+    "quantity": ,
+    "description": 
+},{
+    "name": ,
+    "img": ,
+    "category": "Milk",
+    "price": ,
+    "quantity": ,
+    "description": 
+},{
+    "name": ,
+    "img": ,
+    "category": "Milk",
+    "price": ,
+    "quantity": ,
+    "description": 
+},{
+    "name": ,
+    "img": ,
+    "category": "Milk",
+    "price": ,
+    "quantity": ,
+    "description": 
+},{
+    "name": ,
+    "img": ,
+    "category": "Milk",
+    "price": ,
+    "quantity": ,
+    "description": 
+},{
+    "name": ,
+    "img": ,
+    "category": "Milk",
+    "price": ,
+    "quantity": ,
+    "description": 
+},{
+    "name": ,
+    "img": ,
+    "category": "Milk",
+    "price": ,
+    "quantity": ,
+    "description": 
+},{
+    "name": ,
+    "img": ,
+    "category":"Milk" ,
+    "price": ,
+    "quantity": ,
+    "description": 
+} 
+]
