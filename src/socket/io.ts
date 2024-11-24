@@ -1,6 +1,7 @@
 import { Socket } from "socket.io";
 import { getAllProdutsService, getByNameService, getProdutsByCategoryService } from "../services/productService";
 import { getProdutsByCategory } from "../controllers/productController";
+import { addToCart } from "../services/cartService";
  
  
 
@@ -15,6 +16,9 @@ export const handelSocketConnection = async (client: Socket) => {
      })
      client.on('productsByName',async(data)=>{
         client.emit('productsByCategory',await getByNameService(data))
+     })
+     client.on("addToCart",async (data) => {
+          await addToCart(data)
      })
 
 }
