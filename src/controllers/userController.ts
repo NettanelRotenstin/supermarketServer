@@ -63,7 +63,6 @@ export const autoVerify = async (
 ): Promise<void> => {
     try {
         const user_id = (req as RequestWithUser).user.userId;
-        console.log(user_id);
         const result = await autoVerifyService(user_id as string);
         res.status(201).json({
             msg: "user login succesfull",
