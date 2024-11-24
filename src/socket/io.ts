@@ -8,7 +8,7 @@ import { getProdutsByCategory } from "../controllers/productController";
 import { addToCart } from "../services/cartService";
 
 export const handelSocketConnection = async (client: Socket) => {
-  console.log("client conncted");
+  console.log("client connected");
 
   //when client connect he will get all products
   client.on("get-allProducts", async () => {
@@ -37,4 +37,7 @@ export const handelSocketConnection = async (client: Socket) => {
       client.emit("error", "Failed to add to cart.");
     }
   });
+  client.on('newProduct',async(data)=>{
+    await addToCart(data)
+  })
 };
