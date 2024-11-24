@@ -6,6 +6,7 @@ import http from 'http';
 import { Server } from 'socket.io';
 import userRouter from "./routers/userRouter"
 import cartRouter from "./routers/cartRouter"
+import productRouter from "./routers/productRouter"
 import { ceed } from './services/productService';
 import verifyUser from './middleware/verifyUser';
 
@@ -13,7 +14,7 @@ console.log('server start running');
 
 const PORT = process.env.PORT || 3000;
 
-const app = express();
+export const app = express();
 const server = http.createServer(app);
 
 app.use(cors());
@@ -23,7 +24,7 @@ app.use(express.json());
 ceed()
 app.use('/api/users', userRouter);
 app.use('/api/cart',verifyUser,cartRouter);
-app.use('/api/products', ()=>{});
+app.use('/api/products', productRouter);
 export const io = new Server(server,{ cors: { origin: "*" } });
 io.on('connection', (socket) => {
     console.log('Client connected');

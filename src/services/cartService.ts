@@ -118,6 +118,8 @@ export const checkoutCart = async (payment: PaymentDto): Promise<void> => {
     if (!payment.creditCard) {
       throw new Error("Credit card is required.");
     }
+    
+    
     const cart = await CartModel.findOne({
       user_id: payment.userId,
       isPaid: false,
@@ -126,15 +128,19 @@ export const checkoutCart = async (payment: PaymentDto): Promise<void> => {
     if (!cart) {
       throw new Error("No active cart found for this user.");
     }
-    if(cart.user_id.creditCard !== payment.creditCard){
-      throw new Error("Wrong credit card");}
 
-    if (!cart.receipt.length) {
+    
+    if(cart.user_id.creditCard !== payment.creditCard) {
+      throw new Error("Wrong credit card");
+    }
+
+    
+    if (!cart.receipt || cart.receipt.length === 0) {
       throw new Error("Cannot checkout an empty cart.");
     }
 
+    
     cart.isPaid = true;
-
     await cart.save();
 
     console.log("Cart checked out successfully.");
@@ -143,14 +149,24 @@ export const checkoutCart = async (payment: PaymentDto): Promise<void> => {
     throw error;
   }
 };
+
 export const getHistory = async (user: HistoryDto) => {
   try {
-    const cart = await CartModel.findOne({
+    
+    const carts = await CartModel.find({
       user_id: user.userId,
       isPaid: true,
     }).lean();
-    return cart?.receipt;
+
+    if (carts.length === 0) {
+      throw new Error("No paid carts found.");
+    }
+
+    
+    return carts.map(cart => cart.receipt).flat();
   } catch (error) {
-    return error;
+    console.error("Error retrieving history:", error);
+    throw error;
   }
 };
+
