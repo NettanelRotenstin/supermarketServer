@@ -4,6 +4,7 @@ import userModel from "../models/userModel";
 import { IUser } from "../types/interface/Iuser";
 import Jwt from "jsonwebtoken";
 import PayloadDto from "../types/dto/payload";
+import CartModel from "../models/cartModel";
 
 export const createNewUser = async (
   newUser: RegisterDto
@@ -48,4 +49,36 @@ export const userLogin = async (user: LoginDto) => {
   } catch (error) {
     return error;
   }
+};
+
+export const getProfileService = async (user: LoginDto) => {
+  try {
+    const userFromDb = await userModel.findOne({ username: user.username }).lean();
+    const cartsfromDb  = await CartModel.find({user_id: userFromDb?.id}).lean()
+    const carts = cartsfromDb.map((cart)=>{return {receipt:cart.receipt, date: cart.date} } )
+
+    return { ...userFromDb, password: "********", carts: carts };
+  } catch (error) {
+    return error;
+  }
+};
+export const autoVerifyService = async (user_id: string) => {
+  try {
+    const userFromDb = await userModel.findOne({ _id:user_id }).lean()
+    if (!userFromDb) {
+      throw new Error("User not found");
+    }
+    const payload: PayloadDto = {
+      userId: userFromDb._id as string,
+      creditCard: userFromDb.creditCard,
+      username: userFromDb.username,
+    };
+    const token = Jwt.sign(payload, process.env.JWT_SECRET as string, {
+      expiresIn: "10m",
+    });
+
+    return { ...userFromDb, token, password: "********" };
+  } catch (error) {
+    throw error
+}
 };

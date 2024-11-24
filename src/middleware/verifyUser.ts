@@ -9,15 +9,18 @@ const verifyUser = async (
   next: NextFunction
 ) => {
   try {
-    const token: string = req.headers["authorization"] as string;
-
+    const token = req.headers.authorization;
+    console.log(token)
+    if (!token) {
+      throw new Error("Token is missing");
+    }
     const payload: TokenPayloadDTO = jwt.verify(
       token,
       process.env.JWT_SECRET as string
     )as TokenPayloadDTO
     
     (req as RequestWithUser).user = payload
-
+    console.log("success verify")
     next();
   } catch (err) {
     if (err instanceof TokenExpiredError) {
@@ -30,7 +33,7 @@ const verifyUser = async (
       res.status(400).json({
         err: true,
         message: "Token is missing or curropted",
-        data: err,
+        data: (err as Error).message,
       });
     }
   }
