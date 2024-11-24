@@ -5,7 +5,7 @@ import { CartDto } from "../types/dto/cartDto";
 import { DelteteCartDto } from "../types/dto/deleteCartDto";
 import { PaymentDto } from "../types/dto/dtoPayment";
 import { HistoryDto } from "../types/dto/historyDto";
-import userModel from "../models/userModel";
+
 
 export const cancelCartService = async (id: string) => {
   try {
@@ -43,12 +43,6 @@ export const addToCart = async (Cart: CartDto): Promise<void> => {
       );
     }
 
-    const newItem = {
-      idproduct: product._id as Types.ObjectId,
-      quantity: Cart.quantity,
-      price: product.price,
-    };
-
     let cart = await CartModel.findOne({ user_id: Cart.userId, isPaid: false });
 
     if (!cart) {
@@ -60,12 +54,30 @@ export const addToCart = async (Cart: CartDto): Promise<void> => {
       });
     }
 
-    cart.receipt.push(newItem);
+   
+    const existingItemIndex = cart.receipt.findIndex(
+      (item) => item.idproduct.toString() === (product._id as Types.ObjectId).toString()
+    );
 
+    if (existingItemIndex !== -1) {
+      
+      cart.receipt[existingItemIndex].quantity += Cart.quantity;
+    } else {
+      
+      const newItem = {
+        idproduct: product._id as Types.ObjectId,
+        quantity: Cart.quantity,
+        price: product.price,
+      };
+      cart.receipt.push(newItem);
+    }
+
+    
     cart.totalPrice += product.price * Cart.quantity;
 
     await cart.save();
 
+    
     product.quantity -= Cart.quantity;
     await product.save();
   } catch (error) {
@@ -73,6 +85,7 @@ export const addToCart = async (Cart: CartDto): Promise<void> => {
     throw error;
   }
 };
+
 
 export const removeFromCart = async (
   deleteCart: DelteteCartDto
