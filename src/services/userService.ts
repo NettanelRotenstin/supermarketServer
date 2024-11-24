@@ -4,6 +4,7 @@ import userModel from "../models/userModel";
 import { IUser } from "../types/interface/Iuser";
 import Jwt from "jsonwebtoken";
 import PayloadDto from "../types/dto/payload";
+import CartModel from "../models/cartModel";
 
 export const createNewUser = async (
   newUser: RegisterDto
@@ -45,6 +46,18 @@ export const userLogin = async (user: LoginDto) => {
     });
 
     return { ...userFromDb, token, password: "********" };
+  } catch (error) {
+    return error;
+  }
+};
+
+export const getProfileService = async (user: LoginDto) => {
+  try {
+    const userFromDb = await userModel.findOne({ username: user.username }).lean();
+    const cartsfromDb  = await CartModel.find({user_id: userFromDb?.id}).lean()
+    const carts = cartsfromDb.map((cart)=>{return {receipt:cart.receipt, date: cart.date} } )
+
+    return { ...userFromDb, password: "********", carts: carts };
   } catch (error) {
     return error;
   }
