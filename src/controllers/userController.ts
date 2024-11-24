@@ -36,8 +36,8 @@ export const login = async (req: Request, res: Response):Promise<void> => {
 export const getProfile = async (req: Request, res: Response):Promise<void> => {
   try {
     const result = await getProfileService(req.body)
-    res.status(201).json({
-      msg: "user login succesfull",
+    res.status(200).json({
+      msg: "get profile",
       err: false,
       data:result
     });
