@@ -10,6 +10,7 @@ import verifyUser from './middleware/verifyUser';
 import cartRouter from "./routers/cartRouter"
 
 import { ceed } from './services/productService';
+import { handelSocketConnection } from './socket/io';
 
 console.log('server start running');
 
@@ -27,13 +28,8 @@ app.use('/api/users', userRouter);
 app.use('/api/cart',verifyUser,cartRouter);
 app.use('/api/products', productRouter);
 export const io = new Server(server,{ cors: { origin: "*" } });
-io.on('connection', (socket) => {
-    console.log('Client connected');
-
-    socket.on('disconnect', () => {
-        console.log('Client disconnected');
-    });
-});
+io.on('connection',handelSocketConnection)
+    
 
 
 
