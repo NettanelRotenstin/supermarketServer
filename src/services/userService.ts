@@ -29,6 +29,10 @@ export const createNewUser = async (
 };
 export const userLogin = async (user: LoginDto) => {
   try {
+    if(!user.password || !user.username){
+      throw new Error("All filied arw required");
+      
+    }
     const userFromDb = await userModel
       .findOne({ username: user.username })
       .lean();
