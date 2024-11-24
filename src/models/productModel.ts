@@ -3,7 +3,7 @@ import { categoryEnum } from "../types/enum/category";
 
 export interface IProduct extends Document {
   name: string;
-  image?: string;
+  img?: string;
   category: categoryEnum;
   price: number;
   quantity: number;
@@ -16,9 +16,8 @@ export const productSchema = new Schema<IProduct>({
     type: String,
     required: true,
   },
-  image: {
-    type: String,
-    required: false,
+  img: {
+    type: String
   },
   category: {
     type: String,

@@ -5,10 +5,11 @@ import cors from 'cors';
 import http from 'http';
 import { Server } from 'socket.io';
 import userRouter from "./routers/userRouter"
-import cartRouter from "./routers/cartRouter"
 import productRouter from "./routers/productRouter"
-import { ceed } from './services/productService';
 import verifyUser from './middleware/verifyUser';
+import cartRouter from "./routers/cartRouter"
+
+import { ceed } from './services/productService';
 
 console.log('server start running');
 
