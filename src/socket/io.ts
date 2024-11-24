@@ -6,6 +6,8 @@ import {
 } from "../services/productService";
 import { getProdutsByCategory } from "../controllers/productController";
 import { addToCart } from "../services/cartService";
+import { addProduct } from "./funcsForSocket";
+import { io } from "../app";
 
 export const handelSocketConnection = async (client: Socket) => {
   console.log("client connected");
@@ -38,6 +40,7 @@ export const handelSocketConnection = async (client: Socket) => {
     }
   });
   client.on('newProduct',async(data)=>{
-    await addToCart(data)
+    await addProduct(data)
+    io.emit('allProducts',getAllProdutsService)
   })
 };
