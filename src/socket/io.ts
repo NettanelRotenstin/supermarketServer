@@ -1,20 +1,40 @@
 import { Socket } from "socket.io";
-import { getAllProdutsService, getByNameService, getProdutsByCategoryService } from "../services/productService";
+import {
+  getAllProdutsService,
+  getByNameService,
+  getProdutsByCategoryService,
+} from "../services/productService";
 import { getProdutsByCategory } from "../controllers/productController";
- 
- 
+import { addToCart } from "../services/cartService";
 
 export const handelSocketConnection = async (client: Socket) => {
-    //when client connect he will get all products
-    client.on("allProducts", async () => {
-        client.emit('allProducts', await getAllProdutsService())
-        //client.emit('myProfile',await)
-    })
-     client.on('productsByCategory',async(data)=>{
-        client.emit('productsByCategory',await getProdutsByCategoryService(data))
-     })
-     client.on('productsByName',async(data)=>{
-        client.emit('productsByCategory',await getByNameService(data))
-     })
+  console.log("client conncted");
 
-}
+  //when client connect he will get all products
+  client.on("get-allProducts", async () => {
+    try {
+      const products = await getAllProdutsService();
+      client.emit("allProducts", products);
+    } catch (error) {
+      console.error("Error fetching all products:", error);
+      client.emit("error", "Failed to fetch products.");
+    }
+  });
+  client.on("productsByCategory", async (data) => {
+    client.emit("productsByCategory", await getProdutsByCategoryService(data));
+  });
+  client.on("productsByName", async (data) => {
+    client.emit("productsByCategory", await getByNameService(data));
+  });
+
+  client.on("addToCart", async (data) => {
+    try {
+      await addToCart(data);
+
+      client.emit("addToCartSuccess");
+    } catch (error) {
+      console.error("Error adding to cart:", error);
+      client.emit("error", "Failed to add to cart.");
+    }
+  });
+};
