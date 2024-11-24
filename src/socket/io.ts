@@ -6,7 +6,7 @@ import { getProdutsByCategory } from "../controllers/productController";
 
 export const handelSocketConnection = async (client: Socket) => {
     //when client connect he will get all products
-    client.on("iAmConnected", async () => {
+    client.on("allProducts", async () => {
         client.emit('allProducts', await getAllProdutsService())
         //client.emit('myProfile',await)
     })
