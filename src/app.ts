@@ -5,6 +5,9 @@ import cors from 'cors';
 import http from 'http';
 import { Server } from 'socket.io';
 import userRouter from "./routers/userRouter"
+import productRouter from "./routers/productRouter"
+import verifyUser from './middleware/verifyUser';
+import cartRouter from "./routers/cartRouter"
 import { ceed } from './services/productService';
 
 console.log('server start running');
@@ -20,8 +23,8 @@ app.use(express.json());
 
 ceed()
 app.use('/api/users', userRouter);
-app.use('/api/cart', ()=>{});
-app.use('/api/products', ()=>{});
+app.use('/api/products', productRouter);
+app.use('/api/cart', verifyUser,cartRouter);
 export const io = new Server(server,{ cors: { origin: "*" } });
 io.on('connection', (socket) => {
     console.log('Client connected');
