@@ -8,13 +8,14 @@ import userRouter from "./routers/userRouter"
 import productRouter from "./routers/productRouter"
 import verifyUser from './middleware/verifyUser';
 import cartRouter from "./routers/cartRouter"
+
 import { ceed } from './services/productService';
 
 console.log('server start running');
 
 const PORT = process.env.PORT || 3000;
 
-const app = express();
+export const app = express();
 const server = http.createServer(app);
 
 app.use(cors());
@@ -23,8 +24,8 @@ app.use(express.json());
 
 ceed()
 app.use('/api/users', userRouter);
+app.use('/api/cart',verifyUser,cartRouter);
 app.use('/api/products', productRouter);
-app.use('/api/cart', verifyUser,cartRouter);
 export const io = new Server(server,{ cors: { origin: "*" } });
 io.on('connection', (socket) => {
     console.log('Client connected');
