@@ -62,3 +62,23 @@ export const getProfileService = async (user: LoginDto) => {
     return error;
   }
 };
+export const autoVerifyService = async (user_id: string) => {
+  try {
+    const userFromDb = await userModel.findOne({ _id:user_id }).lean()
+    if (!userFromDb) {
+      throw new Error("User not found");
+    }
+    const payload: PayloadDto = {
+      userId: userFromDb._id as string,
+      creditCard: userFromDb.creditCard,
+      username: userFromDb.username,
+    };
+    const token = Jwt.sign(payload, process.env.JWT_SECRET as string, {
+      expiresIn: "10m",
+    });
+
+    return { ...userFromDb, token, password: "********" };
+  } catch (error) {
+    throw error
+}
+};
