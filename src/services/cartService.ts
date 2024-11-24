@@ -5,6 +5,7 @@ import { CartDto } from "../types/dto/cartDto";
 import { DelteteCartDto } from "../types/dto/deleteCartDto";
 import { PaymentDto } from "../types/dto/dtoPayment";
 import { HistoryDto } from "../types/dto/historyDto";
+import userModel from "../models/userModel";
 
 export const cancelCartService = async (id: string) => {
   try {
@@ -118,28 +119,24 @@ export const checkoutCart = async (payment: PaymentDto): Promise<void> => {
     if (!payment.creditCard) {
       throw new Error("Credit card is required.");
     }
-    
-    
-    const cart = await CartModel.findOne({
+
+    const cart = (await CartModel.findOne({
       user_id: payment.userId,
       isPaid: false,
-    }).populate("user_id") as any;
+    }).populate("user_id")) as any;
 
     if (!cart) {
       throw new Error("No active cart found for this user.");
     }
 
-    
-    if(cart.user_id.creditCard !== payment.creditCard) {
+    if (cart.user_id.creditCard !== payment.creditCard) {
       throw new Error("Wrong credit card");
     }
 
-    
     if (!cart.receipt || cart.receipt.length === 0) {
       throw new Error("Cannot checkout an empty cart.");
     }
 
-    
     cart.isPaid = true;
     await cart.save();
 
@@ -152,7 +149,6 @@ export const checkoutCart = async (payment: PaymentDto): Promise<void> => {
 
 export const getHistory = async (user: HistoryDto) => {
   try {
-    
     const carts = await CartModel.find({
       user_id: user.userId,
       isPaid: true,
@@ -162,11 +158,22 @@ export const getHistory = async (user: HistoryDto) => {
       throw new Error("No paid carts found.");
     }
 
-    
-    return carts.map(cart => cart.receipt).flat();
+    return carts.map((cart) => cart.receipt).flat();
   } catch (error) {
     console.error("Error retrieving history:", error);
     throw error;
   }
 };
+export const getActionById = async (id: string) => {
+  try {
+    const userCart = await CartModel.findOne({
+      user_id: id,
+      isPaid: false,
+    }).populate("receipt.idproduct");
 
+    return userCart;
+  } catch (error) {
+    console.error("Error in getActionById:", error);
+    throw error;
+  }
+};
