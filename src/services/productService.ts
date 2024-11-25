@@ -40,6 +40,5 @@ export const ceed = async () => {
             });
         }
     } catch (error) {
-        console.log("error in ceed");
     }
 };
