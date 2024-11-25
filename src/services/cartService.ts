@@ -6,7 +6,6 @@ import { DelteteCartDto } from "../types/dto/deleteCartDto";
 import { PaymentDto } from "../types/dto/dtoPayment";
 import { HistoryDto } from "../types/dto/historyDto";
 
-
 export const cancelCartService = async (id: string) => {
   try {
     const cart = await CartModel.findById(id);
@@ -32,6 +31,7 @@ export const cancelCartService = async (id: string) => {
 
 export const addToCart = async (Cart: CartDto): Promise<void> => {
   try {
+    
     const product = await ProductModel.findOne({ name: Cart.prodactName });
     if (!product) {
       throw new Error("No such product exists.");
@@ -54,16 +54,14 @@ export const addToCart = async (Cart: CartDto): Promise<void> => {
       });
     }
 
-   
     const existingItemIndex = cart.receipt.findIndex(
-      (item) => item.idproduct.toString() === (product._id as Types.ObjectId).toString()
+      (item) =>
+        item.idproduct.toString() === (product._id as Types.ObjectId).toString()
     );
 
     if (existingItemIndex !== -1) {
-      
-      cart.receipt[existingItemIndex].quantity += Cart.quantity;
+      cart.receipt[existingItemIndex].quantity += 1;
     } else {
-      
       const newItem = {
         idproduct: product._id as Types.ObjectId,
         quantity: Cart.quantity,
@@ -72,13 +70,12 @@ export const addToCart = async (Cart: CartDto): Promise<void> => {
       cart.receipt.push(newItem);
     }
 
-    
     cart.totalPrice += product.price * Cart.quantity;
 
     await cart.save();
 
+    product.quantity -= Cart.toggelQuantity ? 1 : Cart.quantity
     
-    product.quantity -= Cart.quantity;
     await product.save();
   } catch (error) {
     console.error("Error adding to cart:", error);
@@ -86,14 +83,17 @@ export const addToCart = async (Cart: CartDto): Promise<void> => {
   }
 };
 
-
 export const removeFromCart = async (
   deleteCart: DelteteCartDto
 ): Promise<void> => {
   try {
+    console.log(deleteCart);
+
     const product = await ProductModel.findOne({
       name: deleteCart.productName,
     });
+    console.log(product);
+
     if (!product) {
       throw new Error("No such product exists.");
     }
@@ -105,10 +105,14 @@ export const removeFromCart = async (
     if (!cart) {
       throw new Error("No active cart found for this user.");
     }
+    console.log(cart);
 
     const itemIndex = cart.receipt.findIndex(
-      (item) => item.idproduct === product._id
+      (item) => item.idproduct.equals(product._id as Types.ObjectId)
     );
+    console.log("Product ID:", product._id);
+    console.log("Receipt IDs:", cart.receipt.map(item => item.idproduct));
+    
     if (itemIndex === -1) {
       throw new Error("Product not found in cart.");
     }
@@ -127,6 +131,7 @@ export const removeFromCart = async (
     throw error;
   }
 };
+
 export const checkoutCart = async (payment: PaymentDto): Promise<void> => {
   try {
     if (!payment.creditCard) {
@@ -159,7 +164,52 @@ export const checkoutCart = async (payment: PaymentDto): Promise<void> => {
     throw error;
   }
 };
+export const decreaseQuantity = async (
+  cartToDel: DelteteCartDto
+): Promise<void> => {
+  try {
+    const product = await ProductModel.findOne({
+      name: cartToDel.productName,
+    });
+    if (!product) {
+      throw new Error("No such product exists.");
+    }
 
+    const cart = await CartModel.findOne({
+      user_id: cartToDel.userId,
+      isPaid: false,
+    });
+    if (!cart) {
+      throw new Error("No active cart found for this user.");
+    }
+
+    const itemIndex = cart.receipt.findIndex(
+      (item) =>
+        item.idproduct.toString() === (product._id as Types.ObjectId).toString()
+    );
+    if (itemIndex === -1) {
+      throw new Error("Product not found in cart.");
+    }
+
+    const item = cart.receipt[itemIndex];
+
+    if (item.quantity === 1) {
+      cart.receipt.splice(itemIndex, 1);
+    } else {
+      item.quantity -= 1;
+    }
+
+    cart.totalPrice -= item.price;
+
+    await cart.save();
+
+    product.quantity += 1;
+    await product.save();
+  } catch (error) {
+    console.error("Error decreasing quantity in cart:", error);
+    throw error;
+  }
+};
 export const getHistory = async (user: HistoryDto) => {
   try {
     const carts = await CartModel.find({
