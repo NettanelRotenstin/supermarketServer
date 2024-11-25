@@ -12,7 +12,6 @@ import cartRouter from "./routers/cartRouter"
 import { ceed } from './services/productService';
 import { handelSocketConnection } from './socket/io';
 import 'dotenv/config';
-console.log('server start running');
 
 const PORT = process.env.PORT || 3000;
 
