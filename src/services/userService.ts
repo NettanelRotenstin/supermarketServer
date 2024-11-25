@@ -37,9 +37,13 @@ export const userLogin = async (user: LoginDto) => {
     const userFromDb = await userModel
       .findOne({ username: user.username })
       .lean();
-    if (!userFromDb) throw new Error("User not found");
+    if (!userFromDb) {
+      throw new Error("User not found");
+    }
     const match = await compare(user.password, userFromDb.password);
-    if (!match) throw new Error("Worng password");
+    if (!match){
+      throw new Error("Worng password");
+    } 
     const payload: PayloadDto = {
       userId: userFromDb._id as string,
       creditCard: userFromDb.creditCard,

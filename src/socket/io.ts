@@ -2,6 +2,7 @@ import { Socket } from "socket.io";
 import {
   getAllProdutsService,
   getByNameService,
+  getProductById,
   getProdutsByCategoryService,
 } from "../services/productService";
 
@@ -19,9 +20,9 @@ export const handelSocketConnection = async (client: Socket) => {
   console.log("client connected");
 
   //when client connect he will get all products
-  client.on("get-allProducts", async () => {
+  client.on("get-allProducts", async (id) => {
     try {
-      const products = await getAllProdutsService();
+      const products = await getProductById(id);
       client.emit("allProducts", products);
     } catch (error) {
       console.error("Error fetching all products:", error);
