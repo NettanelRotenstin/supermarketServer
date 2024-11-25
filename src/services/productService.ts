@@ -42,3 +42,12 @@ export const ceed = async () => {
     } catch (error) {
     }
 };
+export const getProductById = async (id:string) => {
+    try {
+     return  await ProductModel.findById(id)
+    } catch (error) {
+        return error
+
+        
+    }
+}

@@ -31,13 +31,12 @@ export const cancelCartService = async (id: string) => {
 
 export const addToCart = async (Cart: CartDto): Promise<void> => {
   try {
-    
     const product = await ProductModel.findOne({ name: Cart.prodactName });
     if (!product) {
       throw new Error("No such product exists.");
     }
 
-    if (product.quantity < Cart.quantity) {
+    if (product.quantity <= 0) {
       throw new Error(
         "The product is out of stock or insufficient quantity available."
       );
@@ -74,8 +73,8 @@ export const addToCart = async (Cart: CartDto): Promise<void> => {
 
     await cart.save();
 
-    product.quantity -= Cart.toggelQuantity ? 1 : Cart.quantity
-    
+    product.quantity -= Cart.toggelQuantity ? 1 : Cart.quantity;
+
     await product.save();
   } catch (error) {
     console.error("Error adding to cart:", error);
@@ -107,12 +106,15 @@ export const removeFromCart = async (
     }
     console.log(cart);
 
-    const itemIndex = cart.receipt.findIndex(
-      (item) => item.idproduct.equals(product._id as Types.ObjectId)
+    const itemIndex = cart.receipt.findIndex((item) =>
+      item.idproduct.equals(product._id as Types.ObjectId)
     );
     console.log("Product ID:", product._id);
-    console.log("Receipt IDs:", cart.receipt.map(item => item.idproduct));
-    
+    console.log(
+      "Receipt IDs:",
+      cart.receipt.map((item) => item.idproduct)
+    );
+
     if (itemIndex === -1) {
       throw new Error("Product not found in cart.");
     }
@@ -134,10 +136,6 @@ export const removeFromCart = async (
 
 export const checkoutCart = async (payment: PaymentDto): Promise<void> => {
   try {
-    if (!payment.creditCard) {
-      throw new Error("Credit card is required.");
-    }
-
     const cart = (await CartModel.findOne({
       user_id: payment.userId,
       isPaid: false,
