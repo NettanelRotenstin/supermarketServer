@@ -1,3 +1,3 @@
 export interface HistoryDto{
-    userId: string
+    _id: string
 }
