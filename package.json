@@ -5,9 +5,8 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "test": "cross-env NODE_ENV=staging jest --detectOpenHandles dist",
-    "dev:prd": "cross-env NODE_ENV=production nodemon dist/app.js",
-    "dev:stg": "cross-env NODE_ENV=staging nodemon dist/app.js"
+    "test": "jest --detectOpenHandles dist",
+    "dev": "nodemon dist/app.js"
   },
   "description": "",
   "dependencies": {

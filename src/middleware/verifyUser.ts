@@ -10,7 +10,6 @@ const verifyUser = async (
 ) => {
   try {
     const token = req.headers.authorization;
-    console.log(token)
     if (!token) {
       throw new Error("Token is missing");
     }
@@ -20,7 +19,6 @@ const verifyUser = async (
     )as TokenPayloadDTO
     
     (req as RequestWithUser).user = payload
-    console.log("success verify")
     next();
   } catch (err) {
     if (err instanceof TokenExpiredError) {
