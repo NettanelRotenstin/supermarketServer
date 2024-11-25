@@ -19,7 +19,6 @@ import { io } from "../app";
 import { HistoryDto } from "../types/dto/historyDto";
 
 export const handelSocketConnection = async (client: Socket) => {
-  console.log("client connected");
 
   //when client connect he will get all products
   client.on("get-allProducts", async (id) => {
