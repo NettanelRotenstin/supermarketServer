@@ -91,7 +91,7 @@ export const handelSocketConnection = async (client: Socket) => {
       client.emit("error", "Failed to fetch cart.");
     }
   });
-  client.on('history',async(userId:HistoryDto)=>{
-    client.emit('history',await getHistory(userId))
+  client.on('history', async (userId: HistoryDto) => {
+    client.emit('history', await getHistory(userId))
   })
 };
