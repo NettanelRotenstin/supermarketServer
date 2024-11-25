@@ -211,15 +211,15 @@ export const decreaseQuantity = async (
 export const getHistory = async (user: HistoryDto) => {
   try {
     const carts = await CartModel.find({
-      user_id: user.userId,
+      user_id: user._id,
       isPaid: true,
     }).lean();
 
-    if (carts.length === 0) {
-      throw new Error("No paid carts found.");
-    }
+    // if (carts.length === 0) {
+    //   throw new Error("No paid carts found.");
+    // }
 
-    return carts.map((cart) => cart.receipt).flat();
+    return carts;
   } catch (error) {
     console.error("Error retrieving history:", error);
     throw error;
