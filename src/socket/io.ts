@@ -11,10 +11,12 @@ import {
   cancelCartService,
   decreaseQuantity,
   getActionById,
+  getHistory,
   removeFromCart,
 } from "../services/cartService";
 import { addProduct } from "./funcsForSocket";
 import { io } from "../app";
+import { HistoryDto } from "../types/dto/historyDto";
 
 export const handelSocketConnection = async (client: Socket) => {
   console.log("client connected");
@@ -90,4 +92,7 @@ export const handelSocketConnection = async (client: Socket) => {
       client.emit("error", "Failed to fetch cart.");
     }
   });
+  client.on('history', async (userId: HistoryDto) => {
+    client.emit('history', await getHistory(userId))
+  })
 };

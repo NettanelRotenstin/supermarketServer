@@ -55,7 +55,7 @@ export const userLogin = async (user: LoginDto) => {
 
     return { ...userFromDb, token, password: "********" };
   } catch (error) {
-    return error;
+    throw error;
   }
 };
 
