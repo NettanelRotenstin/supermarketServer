@@ -8,6 +8,7 @@
     "test": "jest --detectOpenHandles dist",
     "dev": "nodemon dist/app.js"
   },
+  
   "description": "",
   "dependencies": {
     "@types/socket.io": "^3.0.1",
