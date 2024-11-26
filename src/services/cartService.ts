@@ -221,6 +221,7 @@ export const getHistory = async (user: HistoryDto) => {
     //   throw new Error("No paid carts found.");
     // }
 
+  
     return carts;
   } catch (error) {
     console.error("Error retrieving history:", error);
